@@ -17,13 +17,15 @@ password varchar(25) ,
 "dateOfModify" timestamp without time zone ,
 primary key (id))
 
+ALTER TABLE employee add column active boolean;
+
 -INSERT QUERY FOR Employee
 
 INSERT INTO public.employee(
-	id, name, email, address, "dateOfBirth", "dateOfJoining", education, type, role, password, "dateOfEntry", "dateOfModify")
-	VALUES (1, 'Employee1', 'emp1@mail.com', 'India', '12-11-1999', '02-02-2021', 'B.Tech', 'engineer', 'admin', 'Password', '02-01-2021', '08-09-2021');
+	id, name, email, address, "dateOfBirth", "dateOfJoining", education, type, role, password, "dateOfEntry", "dateOfModify","active")
+	VALUES (1, 'Employee1', 'emp1@mail.com', 'India', '12-11-1999', '02-02-2021', 'B.Tech', 'engineer', 'admin', 'Password', '02-01-2021', '08-09-2021','true');
 
 INSERT INTO public.employee(
-	id, name, email, address, "dateOfBirth", "dateOfJoining", education, type, role, password, "dateOfEntry", "dateOfModify")
-	VALUES (2, 'Employee2', 'emp2@mail.com', 'India', '12-11-1999', '02-02-2021', 'B.Tech', 'contract', 'normal', 'Password', '02-01-2021', '08-09-2021');
+	id, name, email, address, "dateOfBirth", "dateOfJoining", education, type, role, password, "dateOfEntry", "dateOfModify","active")
+	VALUES (2, 'Employee2', 'emp2@mail.com', 'India', '12-11-1999', '02-02-2021', 'B.Tech', 'contract', 'normal', 'Password', '02-01-2021', '08-09-2021','true');
 ==========================================
