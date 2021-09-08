@@ -46,7 +46,8 @@ primary key (id),
 CONSTRAINT fk_employee
 FOREIGN KEY(employeeId)
 REFERENCES employee(id)
-ON DELETE CASCADE)
+ON DELETE CASCADE
+ON UPDATE CASCADE)
 
 =========================================
 #  TABLE LEAVES
@@ -64,7 +65,8 @@ primary key (id),
 CONSTRAINT fk_employee
 FOREIGN KEY(employeeId)
 REFERENCES employee(id)
-ON DELETE CASCADE)
+ON DELETE CASCADE
+ON UPDATE CASCADE)
 
 ========================================
 # TABLE ATTENDANCE
@@ -73,16 +75,15 @@ ON DELETE CASCADE)
 
 CREATE TABLE public.attendance
 (
-id integer NOT NULL,
-"employeeId" integer,
+id serial,
+employeeId integer,
 date date,
-"inTimeDate" timestamp without time zone,
-"outTime" timestamp without time zone,
-"totalHours" integer,
+inTimeDate timestamp without time zone,
+outTime timestamp without time zone,
+totalHours integer,
 PRIMARY KEY (id),
-CONSTRAINT "employeeId" FOREIGN KEY ("employeeId")
-REFERENCES None (id) MATCH SIMPLE
-ON UPDATE NO ACTION
+CONSTRAINT fk_employee  FOREIGN KEY (employeeId)
+REFERENCES employee(id)
 ON DELETE CASCADE
-NOT VALID
+ON UPDATE CASCADE
 );
