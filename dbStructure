@@ -67,3 +67,22 @@ REFERENCES employee(id)
 ON DELETE CASCADE)
 
 ========================================
+# TABLE ATTENDANCE
+
+-CREATE QUERY FOR TABLE - ATTENDANCE
+
+CREATE TABLE public.attendance
+(
+id integer NOT NULL,
+"employeeId" integer,
+date date,
+"inTimeDate" timestamp without time zone,
+"outTime" timestamp without time zone,
+"totalHours" integer,
+PRIMARY KEY (id),
+CONSTRAINT "employeeId" FOREIGN KEY ("employeeId")
+REFERENCES None (id) MATCH SIMPLE
+ON UPDATE NO ACTION
+ON DELETE CASCADE
+NOT VALID
+);
