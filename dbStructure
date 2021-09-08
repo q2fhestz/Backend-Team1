@@ -1,0 +1,26 @@
+#db name : HRMIS
+
+#CREATE QUERY FOR TABLE - Employee 
+
+CREATE TABLE public.employee
+(id serial,name varchar(25) ,
+email varchar(40) UNIQUE ,
+address varchar(48) ,
+"dateOfBirth" date ,"dateOfJoining" date,
+education varchar(25) ,
+type varchar(25),
+role varchar(25),
+password varchar(25) ,
+"dateOfEntry" timestamp without time zone,
+"dateOfModify" timestamp without time zone ,
+primary key (id))
+
+-INSERT QUERY FOR Employee
+
+INSERT INTO public.employee(
+	id, name, email, address, "dateOfBirth", "dateOfJoining", education, type, role, password, "dateOfEntry", "dateOfModify")
+	VALUES (1, 'Employee1', 'emp1@mail.com', 'India', '12-11-1999', '02-02-2021', 'B.Tech', 'engineer', 'admin', 'Password', '02-01-2021', '08-09-2021');
+
+INSERT INTO public.employee(
+	id, name, email, address, "dateOfBirth", "dateOfJoining", education, type, role, password, "dateOfEntry", "dateOfModify")
+	VALUES (2, 'Employee2', 'emp2@mail.com', 'India', '12-11-1999', '02-02-2021', 'B.Tech', 'contract', 'normal', 'Password', '02-01-2021', '08-09-2021');
