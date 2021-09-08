@@ -1,6 +1,8 @@
-#db name : HRMIS
+# DB NAME : HRMIS
+========================================
+#. TABLE EMPLOYEE
 
-#CREATE QUERY FOR TABLE - Employee 
+-CREATE QUERY FOR TABLE - Employee 
 
 CREATE TABLE public.employee
 (id serial,name varchar(25) ,
@@ -24,3 +26,4 @@ INSERT INTO public.employee(
 INSERT INTO public.employee(
 	id, name, email, address, "dateOfBirth", "dateOfJoining", education, type, role, password, "dateOfEntry", "dateOfModify")
 	VALUES (2, 'Employee2', 'emp2@mail.com', 'India', '12-11-1999', '02-02-2021', 'B.Tech', 'contract', 'normal', 'Password', '02-01-2021', '08-09-2021');
+==========================================
