@@ -29,3 +29,41 @@ INSERT INTO public.employee(
 	id, name, email, address, "dateOfBirth", "dateOfJoining", education, type, role, password, "dateOfEntry", "dateOfModify","active")
 	VALUES (2, 'Employee2', 'emp2@mail.com', 'India', '12-11-1999', '02-02-2021', 'B.Tech', 'contract', 'normal', 'Password', '02-01-2021', '08-09-2021','true');
 ==========================================
+#. TABLE SALARIES
+
+- CREATE QUERY FOR TABLE - SALARIES
+
+CREATE TABLE public.salaries
+(id serial,
+employeeId integer ,
+monthYear varchar(40) ,
+basic numeric ,hra numeric ,
+lta numeric ,variable numeric ,
+bonus numeric,TDS numeric,tax numeric ,
+total numeric,workingDaysInMonth int, dateOfEntry timestamp without time zone,
+dateOfModify timestamp without time zone,
+primary key (id),
+CONSTRAINT fk_employee
+FOREIGN KEY(employeeId)
+REFERENCES employee(id)
+ON DELETE CASCADE)
+
+=========================================
+#  TABLE LEAVES
+
+- CREATE QUERY FOR TABLE - LEAVES
+
+CREATE TABLE public.leaves
+(id serial,
+employeeId integer ,
+startDate date ,
+endDate date ,count int ,
+year int, dateOfEntry timestamp without time zone,
+dateOfModify timestamp without time zone,
+primary key (id),
+CONSTRAINT fk_employee
+FOREIGN KEY(employeeId)
+REFERENCES employee(id)
+ON DELETE CASCADE)
+
+========================================
